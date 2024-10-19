@@ -1,0 +1,32 @@
+api for fetching token
+url:http://127.0.0.1:8000/api/token/
+method:post
+body:{username,password}
+
+schema:Customer
+fields:[name,phone,email,vehicle_num,running_km,work_status,service_advisor]
+
+api for adding customer details
+===============================
+url:http://127.0.0.1:8000/api/customer/
+method:post
+body:{name,phone,email,vehicle_num,running_km,work_status}
+authorization:token
+
+api for listing customer details
+===============================
+url:http://127.0.0.1:8000/api/customer/
+method:get
+body:null
+authorization:token
+
+
+schema:Work
+fields:[ customer_object,description,amount,created_date,updated_date,is_active]
+
+api for adding work details
+===============================
+url:http://127.0.0.1:8000/api/<cus-id>/add-work/
+method:post
+body:{description,amount,}
+authorization:token
